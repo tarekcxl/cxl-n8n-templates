@@ -152,7 +152,13 @@
       "executeOnce": true,
       "retryOnFail": true,
       "maxTries": 3,
-      "waitBetweenTries": 5000
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "6rbVHUqzje7fwVi1",
+          "name": "Google Sheets OAuth2 API [Bruno]"
+        }
+      }
     },
     {
       "parameters": {
@@ -315,6 +321,12 @@
       "retryOnFail": true,
       "maxTries": 3,
       "waitBetweenTries": 5000,
+      "credentials": {
+        "openAiApi": {
+          "id": "RVRsav3AK0hynP0E",
+          "name": "OpenAI account 2"
+        }
+      },
       "onError": "continueRegularOutput"
     },
     {
@@ -344,12 +356,19 @@
       "type": "@n8n/n8n-nodes-langchain.anthropic",
       "typeVersion": 1,
       "position": [
-        1328,
+        1312,
         -48
       ],
       "retryOnFail": true,
       "maxTries": 3,
       "waitBetweenTries": 5000,
+      "credentials": {
+        "anthropicApi": {
+          "id": "F341R3cthb6N6OqN",
+          "name": "Anthropic account"
+        }
+      },
+      "disabled": true,
       "onError": "continueRegularOutput"
     },
     {
@@ -385,6 +404,13 @@
       "retryOnFail": true,
       "maxTries": 3,
       "waitBetweenTries": 5000,
+      "credentials": {
+        "perplexityApi": {
+          "id": "Ydnazsjnz3UlHNkw",
+          "name": "Perplexity account"
+        }
+      },
+      "disabled": true,
       "onError": "continueRegularOutput"
     },
     {
@@ -420,6 +446,13 @@
       "retryOnFail": true,
       "maxTries": 3,
       "waitBetweenTries": 5000,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "mTHS1U9thWO9KcVa",
+          "name": "Google Gemini(PaLM) Api account (AEO Project)"
+        }
+      },
+      "disabled": true,
       "onError": "continueRegularOutput"
     },
     {
@@ -536,8 +569,8 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        1552,
-        16
+        1600,
+        0
       ]
     },
     {
@@ -715,6 +748,12 @@
       "retryOnFail": true,
       "maxTries": 2,
       "waitBetweenTries": 10000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "6rbVHUqzje7fwVi1",
+          "name": "Google Sheets OAuth2 API [Bruno]"
+        }
+      },
       "onError": "continueRegularOutput"
     },
     {
@@ -762,7 +801,6 @@
     },
     {
       "parameters": {
-        "authentication": "oAuth2",
         "select": "user",
         "user": {
           "__rl": true,
@@ -787,7 +825,13 @@
       "retryOnFail": true,
       "maxTries": 3,
       "waitBetweenTries": 5000,
-      "webhookId": "d3263c4b-8e0c-4bff-91d6-f9bd99a10378"
+      "webhookId": "c024a2b3-cb4e-47c1-8fe6-fbcb1587abd4",
+      "credentials": {
+        "slackApi": {
+          "id": "jrKpVfwQY0fKyoSC",
+          "name": "CXL Page Watch Bot"
+        }
+      }
     },
     {
       "parameters": {
@@ -866,7 +910,7 @@
       "retryOnFail": true,
       "maxTries": 3,
       "waitBetweenTries": 5000,
-      "webhookId": "7bd43407-711d-428d-a8d9-c81f01eceb98",
+      "webhookId": "99a7aee4-064b-483d-ba33-cd1225122232",
       "onError": "continueRegularOutput"
     },
     {
@@ -874,7 +918,7 @@
         "sendTo": "<__PLACEHOLDER_VALUE__Email address(es) that receive the report, comma separated__>",
         "subject": "=AI Visibility Report {{ $('Config').first().json.week }}",
         "emailType": "text",
-        "message": "=Hi,\n\nAttached is the AI Visibility report for {{ $('Config').first().json.week }} in Markdown format ({{ $('Config').first().json.target_brand }} mention rate per prompt for each AI tool).\n\nThe same report was also posted to Slack.",
+        "message": "=Hi,\n\nAttached is the AI Visibility report for {{ $('Config').first().json.week }} in Markdown format (CXL mention rate per prompt for each AI tool). The same report was also posted to Slack.\n\nThe full report is included below in Markdown.\n\n----- BEGIN REPORT (Markdown) -----\n\n{{ $('Calculate Mention Rates').first().json.md_text }}\n\n----- END REPORT -----",
         "options": {
           "appendAttribution": false,
           "attachmentsUi": {
@@ -896,7 +940,13 @@
       "retryOnFail": true,
       "maxTries": 2,
       "waitBetweenTries": 10000,
-      "webhookId": "0cec984f-cd45-459d-96f0-bfe40dabfae7",
+      "webhookId": "225b7e5e-f0e6-4d1c-9cb7-62906984def1",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "jVfMN1mZRiK2gkPh",
+          "name": "Gmail account"
+        }
+      },
       "onError": "continueRegularOutput"
     },
     {
@@ -1062,6 +1112,12 @@
       "retryOnFail": true,
       "maxTries": 2,
       "waitBetweenTries": 10000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "6rbVHUqzje7fwVi1",
+          "name": "Google Sheets OAuth2 API [Bruno]"
+        }
+      },
       "onError": "continueRegularOutput"
     }
   ],
@@ -1307,7 +1363,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "981e2c78-548c-4272-8d76-665401a0b353",
+  "versionId": "35bd27f2-2c13-41b2-ace9-c42c8919a21e",
   "meta": {
     "instanceId": "6c25709e89c48e3869ccd1fc0b916459ace5ee9ab06c3bd52c82dfeff752a580"
   },
